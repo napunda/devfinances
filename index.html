@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
+      rel="stylesheet"
+    />
+    <script defer src="/js/script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/1e69e5771b.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Dev Finances</title>
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="container logo">
+          <img src="/img/logo.svg" alt="" />
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <section class="balance-section">
+          <div class="content">
+            <div class="card">
+              <div class="card-head">
+                <span> Entradas </span>
+                <i class="fas fa-arrow-circle-up"></i>
+              </div>
+              <div class="card-value">R$ 17.400,00</div>
+            </div>
+            <div class="card">
+              <div class="card-head">
+                <span> Saídas </span>
+                <i class="fas fa-arrow-circle-down red"></i>
+              </div>
+              <div class="card-value">R$ 1.259,00</div>
+            </div>
+            <div class="card green">
+              <div class="card-head">
+                <span> Total </span>
+                <i class="fas fa-dollar-sign"></i>
+              </div>
+              <div class="card-value">R$ 16.141,00</div>
+            </div>
+          </div>
+        </section>
+        <section class="transactions-section">
+          <a onclick="ModalOpen()" href="#">+Nova transação</a>
+          <table class="table-values">
+            <thead>
+              <tr>
+                <th>Descrição</th>
+                <th>Valor</th>
+                <th>Data</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>Desenvolvimento de site</th>
+                <td>R$ 12.000,00</td>
+                <td>13/04/2020</td>
+                <th><i class="fas fa-minus-circle"></i></th>
+              </tr>
+              <tr>
+                <th>Hamburguer</th>
+                <td>- R$ 59,00</td>
+                <td>10/04/2020</td>
+                <th><i class="fas fa-minus-circle"></i></th>
+              </tr>
+              <tr>
+                <th>Aluguel do apartamento</th>
+                <td>- R$ 1.200,00</td>
+                <td>27/03/2020</td>
+                <th><i class="fas fa-minus-circle"></i></th>
+              </tr>
+              <tr>
+                <th>Computador</th>
+                <td>R$ 5.400,00</td>
+                <td>15/03/2020</td>
+                <th><i class="fas fa-minus-circle"></i></th>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+    </main>
+    <div class="modal modal-hide">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span>Nova Transação</span>
+        </div>
+        <div class="modal-body">
+          <input type="text" />
+          <input type="number" />
+          <input type="date" />
+          <div class="modal-buttons">
+            <a onclick="ModalClose()" href="#">Cancelar</a>
+            <a onclick="ModalClose()" href="#">Salvar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

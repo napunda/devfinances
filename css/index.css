@@ -1,0 +1,258 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --text: "#363F5F";
+}
+
+body {
+  background-color: #f0f2f5;
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #2d4a22;
+}
+.container {
+  margin: 0 auto;
+  max-width: 1120px;
+  padding: 12px;
+}
+
+.header-container {
+  width: 100%;
+  aspect-ratio: 1440 / 238;
+  background-color: #2d4a22;
+}
+
+.header-container .logo {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+  margin-top: -103px;
+}
+.content .card {
+  color: #363f5f;
+  padding: 20px;
+  aspect-ratio: 352 / 136;
+  width: 100%;
+  height: 100%;
+  max-height: 156px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.card .card-head {
+  display: flex;
+  justify-content: space-between;
+}
+.card .card-head i {
+  font-size: 32px;
+  color: #49aa26;
+}
+.card .card-head span {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.card .card-value {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 54px;
+  margin-top: 14px;
+}
+
+.red {
+  color: #e92929 !important;
+}
+
+.green {
+  background-color: #49aa26 !important;
+  color: #fff !important;
+}
+.green i {
+  color: #fff !important;
+}
+
+.table-values {
+  width: 100%;
+  border-spacing: 0 8px !important;
+}
+
+.table-values tbody tr {
+  background-color: #fff;
+  height: 64px;
+  transition: all 0.15s;
+}
+.table-values tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.541);
+}
+
+.table-values tr {
+  height: 64px;
+}
+
+.table-values tr th {
+  padding-left: 32px;
+}
+
+.table-values thead th {
+  text-align: left;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #969cb3;
+}
+
+.table-values tbody th {
+  text-align: left;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #363f5f;
+}
+
+.table-values tbody tr td:nth-child(3) {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #969cb3;
+  text-align: end;
+  padding-right: 32px;
+}
+
+.transactions-section {
+  margin-top: 64px;
+}
+
+.table-values thead tr th:nth-child(3) {
+  text-align: end;
+  padding-right: 32px;
+}
+.table-values tbody tr th:nth-child(4) {
+  padding-left: 0;
+  padding-right: 32px;
+  text-align: center;
+}
+
+@media (max-width: 1120px) {
+  .content {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .header-container {
+    height: 250px;
+  }
+}
+
+@media (max-width: 600px) {
+  .table-values tbody th,
+  .table-values tbody td {
+    font-size: 14px !important;
+  }
+}
+
+.fa-minus-circle {
+  color: #e92929;
+  font-size: 26px;
+}
+.modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+  padding: 12px;
+}
+.modal-content {
+  aspect-ratio: 568 / 343;
+  max-width: 568px;
+  width: 100%;
+  background-color: #f0f2f5;
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 8px 25px 1px rgba(0, 0, 0, 0.31);
+  box-shadow: 0px 8px 25px 1px rgba(0, 0, 0, 0.31);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.modal-body input {
+  height: 50px;
+  background-color: #fff;
+  border: none;
+  border-radius: 2px;
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+  padding-left: 15px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: start;
+  width: 100%;
+  color: #363f5f;
+  font-size: 22px;
+  font-weight: 500 !important;
+  margin-bottom: 12px;
+}
+
+.modal-body input:focus-visible {
+  outline: none;
+}
+
+.modal-hide {
+  pointer-events: none;
+  opacity: 0;
+}
+.modal-buttons {
+  display: flex;
+  gap: 15px;
+}
+.modal-buttons a {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-radius: 2px;
+}
+
+.modal-buttons a:nth-child(1) {
+  border: 2px solid #e92929;
+  color: #e92929;
+}
+.modal-buttons a:nth-child(2) {
+  background-color: #49aa26;
+  color: #fff;
+}

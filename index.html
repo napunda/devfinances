@@ -52,7 +52,7 @@
           </div>
         </section>
         <section class="transactions-section">
-          <a onclick="ModalOpen()" href="#">+Nova transação</a>
+          <a onclick="Modal.toggle()" href="#">+Nova transação</a>
           <table class="table-values">
             <thead>
               <tr>
@@ -93,17 +93,19 @@
       </div>
     </main>
     <div class="modal modal-hide">
-      <div class="modal-content">
-        <div class="modal-header">
-          <span>Nova Transação</span>
-        </div>
-        <div class="modal-body">
-          <input type="text" />
-          <input type="number" />
-          <input type="date" />
-          <div class="modal-buttons">
-            <a onclick="ModalClose()" href="#">Cancelar</a>
-            <a onclick="ModalClose()" href="#">Salvar</a>
+      <div class="modal-overlay">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span>Nova Transação</span>
+          </div>
+          <div class="modal-body">
+            <input type="text" />
+            <input type="number" />
+            <input type="date" />
+            <div class="modal-buttons">
+              <a onclick="Modal.toggle()" href="#">Cancelar</a>
+              <a onclick="Modal.toggle()" href="#">Salvar</a>
+            </div>
           </div>
         </div>
       </div>

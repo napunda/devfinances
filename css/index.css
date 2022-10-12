@@ -183,7 +183,16 @@ a {
   justify-content: center;
   align-items: center;
   transition: all 0.3s;
-  padding: 12px;
+}
+
+.modal-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.507);
+  padding: 24px;
 }
 .modal-content {
   aspect-ratio: 568 / 343;

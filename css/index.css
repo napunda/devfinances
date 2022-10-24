@@ -141,6 +141,13 @@ a {
   margin-top: 64px;
 }
 
+.transactions-incomes {
+  color: #49aa26;
+}
+.transactions-outflow {
+  color: #e92929;
+}
+
 .table-values thead tr th:nth-child(3) {
   text-align: end;
   padding-right: 32px;

@@ -17,6 +17,7 @@ a {
   text-decoration: none;
   color: #2d4a22;
 }
+
 .container {
   margin: 0 auto;
   max-width: 1120px;
@@ -41,6 +42,7 @@ a {
   gap: 32px;
   margin-top: -103px;
 }
+
 .content .card {
   color: #363f5f;
   padding: 20px;
@@ -56,10 +58,12 @@ a {
   display: flex;
   justify-content: space-between;
 }
+
 .card .card-head i {
   font-size: 32px;
   color: #49aa26;
 }
+
 .card .card-head span {
   font-style: normal;
   font-weight: 400;
@@ -83,6 +87,7 @@ a {
   background-color: #49aa26 !important;
   color: #fff !important;
 }
+
 .green i {
   color: #fff !important;
 }
@@ -97,6 +102,7 @@ a {
   height: 64px;
   transition: all 0.15s;
 }
+
 .table-values tbody tr:hover {
   background-color: rgba(255, 255, 255, 0.541);
 }
@@ -144,6 +150,7 @@ a {
 .transactions-incomes {
   color: #49aa26;
 }
+
 .transactions-outflow {
   color: #e92929;
 }
@@ -152,6 +159,7 @@ a {
   text-align: end;
   padding-right: 32px;
 }
+
 .table-values tbody tr th:nth-child(4) {
   padding-left: 0;
   padding-right: 32px;
@@ -180,6 +188,7 @@ a {
   color: #e92929;
   font-size: 26px;
 }
+
 .modal {
   width: 100%;
   height: 100%;
@@ -201,6 +210,7 @@ a {
   background-color: rgba(0, 0, 0, 0.507);
   padding: 24px;
 }
+
 .modal-content {
   aspect-ratio: 568 / 343;
   max-width: 568px;
@@ -251,6 +261,7 @@ a {
   pointer-events: none;
   opacity: 0;
 }
+
 .modal-buttons {
   display: flex;
   gap: 15px;

@@ -33,21 +33,21 @@
                 <span> Entradas </span>
                 <i class="fas fa-arrow-circle-up"></i>
               </div>
-              <div class="card-value">R$ 17.400,00</div>
+              <div id="displayincomes" class="card-value">R$ 0,00</div>
             </div>
             <div class="card">
               <div class="card-head">
                 <span> Saídas </span>
                 <i class="fas fa-arrow-circle-down red"></i>
               </div>
-              <div class="card-value">R$ 1.259,00</div>
+              <div id="displayOutflow" class="card-value">R$ 0,00</div>
             </div>
             <div class="card green">
               <div class="card-head">
                 <span> Total </span>
                 <i class="fas fa-dollar-sign"></i>
               </div>
-              <div class="card-value">R$ 16.141,00</div>
+              <div id="displayBalance" class="card-value">R$ 0,00</div>
             </div>
           </div>
         </section>
@@ -74,12 +74,12 @@
             <span>Nova Transação</span>
           </div>
           <div class="modal-body">
-            <input type="text" />
-            <input type="number" />
-            <input type="date" />
+            <input id="modalDescription" type="text" />
+            <input id="modalValue" type="number" />
+            <input id="modalDate" type="date" />
             <div class="modal-buttons">
               <a onclick="Modal.toggle()" href="#">Cancelar</a>
-              <a id="trigger" href="#">Salvar</a>
+              <a onclick="Form.submit()" href="#">Salvar</a>
             </div>
           </div>
         </div>

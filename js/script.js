@@ -155,6 +155,7 @@ const Form = {
     try {
       Form.validatFields();
       console.log(Form.getValues());
+      Transaction.add(Form.getValues());
     } catch (error) {
       alert(error.message);
     }

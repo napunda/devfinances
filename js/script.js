@@ -6,30 +6,30 @@ const Modal = {
 };
 
 const transactions = [
-  {
-    id: 0,
-    description: "Desenvolvimento de site",
-    amount: 12000,
-    date: "13/04/2020",
-  },
-  {
-    id: 1,
-    description: "Hamburguer",
-    amount: -59.5,
-    date: "10/04/2020",
-  },
-  {
-    id: 2,
-    description: "Aluguel do apartamento",
-    amount: -1200,
-    date: "27/03/2020	",
-  },
-  {
-    id: 3,
-    description: "Computador",
-    amount: 5400,
-    date: "13/04/2020",
-  },
+  // {
+  //   id: 0,
+  //   description: "Desenvolvimento de site",
+  //   amount: 12000,
+  //   date: "13/04/2020",
+  // },
+  // {
+  //   id: 1,
+  //   description: "Hamburguer",
+  //   amount: -59.5,
+  //   date: "10/04/2020",
+  // },
+  // {
+  //   id: 2,
+  //   description: "Aluguel do apartamento",
+  //   amount: -1200,
+  //   date: "27/03/2020	",
+  // },
+  // {
+  //   id: 3,
+  //   description: "Computador",
+  //   amount: 5400,
+  //   date: "13/04/2020",
+  // },
 ];
 
 const Transaction = {
@@ -50,7 +50,7 @@ const Transaction = {
         outflow += transaction.amount;
       }
     });
-    return outflow * -1;
+    return outflow > 0 ? outflow * -1 : outflow;
   },
 
   balance() {
@@ -151,11 +151,31 @@ const Form = {
       throw new Error("Preencha todos os campos.");
     }
   },
+
+  formatValues() {
+    let { description, amount, date } = Form.getValues();
+    description = String(description.trim());
+    amount = Number(amount.trim());
+    date = new Date(date);
+    date = date.getDate() + "/" + date.getMonth() + "/" + date.getFullYear();
+    return {
+      description,
+      amount,
+      date,
+    };
+  },
+
+  clearValues() {
+    Form.description.value = "";
+    Form.date.value = "";
+    Form.amount.value = "";
+  },
   submit() {
     try {
       Form.validatFields();
-      console.log(Form.getValues());
-      Transaction.add(Form.getValues());
+      Transaction.add(Form.formatValues());
+      Modal.toggle();
+      Form.clearValues();
     } catch (error) {
       alert(error.message);
     }

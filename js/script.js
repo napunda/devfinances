@@ -156,8 +156,8 @@ const Form = {
     let { description, amount, date } = Form.getValues();
     description = String(description.trim());
     amount = Number(amount.trim());
-    date = new Date(date);
-    date = date.getDate() + "/" + date.getMonth() + "/" + date.getFullYear();
+    dateSplit = date.split("-");
+    date = dateSplit[2] + "/" + dateSplit[1] + "/" + dateSplit[0];
     return {
       description,
       amount,

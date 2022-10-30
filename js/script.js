@@ -5,32 +5,15 @@ const Modal = {
   },
 };
 
-const transactions = [
-  // {
-  //   id: 0,
-  //   description: "Desenvolvimento de site",
-  //   amount: 12000,
-  //   date: "13/04/2020",
-  // },
-  // {
-  //   id: 1,
-  //   description: "Hamburguer",
-  //   amount: -59.5,
-  //   date: "10/04/2020",
-  // },
-  // {
-  //   id: 2,
-  //   description: "Aluguel do apartamento",
-  //   amount: -1200,
-  //   date: "27/03/2020	",
-  // },
-  // {
-  //   id: 3,
-  //   description: "Computador",
-  //   amount: 5400,
-  //   date: "13/04/2020",
-  // },
-];
+const Storage = {
+  get() {
+    return JSON.parse(localStorage.getItem("transactions")) || [];
+  },
+  set(transactions) {
+    localStorage.setItem("transactions", JSON.stringify(transactions));
+  },
+};
+const transactions = Storage.get();
 
 const Transaction = {
   incomes() {
@@ -50,11 +33,11 @@ const Transaction = {
         outflow += transaction.amount;
       }
     });
-    return outflow > 0 ? outflow * -1 : outflow;
+    return outflow;
   },
 
   balance() {
-    return Number(Transaction.incomes() - Transaction.outflow());
+    return Number(Transaction.incomes() + Transaction.outflow());
   },
 
   add(transaction) {
@@ -72,11 +55,12 @@ const insertHTML = {
   transactionsContainer: document.querySelector(".table-values tbody"),
   addTransaction(transaction, index) {
     const tr = document.createElement("tr");
-    tr.innerHTML = insertHTML.innerHTMLtransaction(transaction);
+    tr.innerHTML = insertHTML.innerHTMLtransaction(transaction, index);
     insertHTML.transactionsContainer.appendChild(tr);
+    tr.dataset.index = index;
   },
 
-  innerHTMLtransaction(transaction) {
+  innerHTMLtransaction(transaction, index) {
     const html = `
     <tr>
       <th>${transaction.description}</th>
@@ -89,7 +73,7 @@ const insertHTML = {
       currency: "BRL",
     })}</td>
       <td>${transaction.date}</td>
-      <th><i class="fas fa-minus-circle"></i></th>
+      <th onclick="Transaction.remove(${index})"><i class="fas fa-minus-circle"></i></th>
     </tr>`;
     return html;
   },
@@ -118,15 +102,14 @@ const insertHTML = {
 
 const App = {
   init() {
-    transactions.forEach(function (transaction) {
-      insertHTML.addTransaction(transaction);
-    });
-
+    transactions.forEach(insertHTML.addTransaction);
     insertHTML.displayBalance();
   },
 
   reload() {
     insertHTML.cleartransaction();
+    Storage.set(transactions);
+    Storage.get();
     App.init();
   },
 };

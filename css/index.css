@@ -97,6 +97,15 @@ a {
   border-spacing: 0 8px !important;
 }
 
+.table-values th i {
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.table-values th i:hover {
+  opacity: 0.8;
+}
+
 .table-values tbody tr {
   background-color: #fff;
   height: 64px;
@@ -279,7 +288,12 @@ a {
   border: 2px solid #e92929;
   color: #e92929;
 }
+
 .modal-buttons a:nth-child(2) {
   background-color: #49aa26;
   color: #fff;
+}
+
+.modal-body input:focus {
+  border: solid 2px #49aa26;
 }
